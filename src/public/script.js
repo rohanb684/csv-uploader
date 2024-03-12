@@ -199,6 +199,7 @@ function createPagination(totalRecords, filename){
   console.log(totalRecords);
 
   const paginationContainer = document.getElementById('data-pagination-container');
+  paginationContainer.innerHTML='';
 if(totalRecords > 100){
   console.log("if Entered");
   for(let i=0; i<totalPages; i++){
@@ -212,7 +213,7 @@ if(totalRecords > 100){
         const pageNumber = parseInt(clickedElement.getAttribute('data-id')) + 1;
         getPaginationData(pageNumber, filename);
     })
-    paginationContainer.innerHTML='';
+    
     paginationContainer.appendChild(createEl);
   } 
 }else{
